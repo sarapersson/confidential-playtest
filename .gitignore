@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+
+# Terraform: state can hold secrets, and variables and plans can hold private values.
+# .terraform.lock.hcl is committed on purpose.
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+.terraform/
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+crash.log
+crash.*.log
+
+# Operating system and editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
