@@ -28,7 +28,7 @@ gitleaks found something, or the check could not be done. The push was aborted."
 | --- | --- |
 | Public; secret scanning and push protection on; Dependabot security updates on | [security-and-analysis.json](security-and-analysis.json) |
 | Squash merge only, with the pull request title and description as the default commit message; head branches deleted after merge; only collaborators can create pull requests; wiki and discussions off | [repository-settings.json](repository-settings.json) |
-| Actions must be pinned to a full commit SHA; the `GITHUB_TOKEN` is read-only and cannot approve pull requests; workflows from all external contributors need approval | [actions-settings.json](actions-settings.json) |
+| Actions must be pinned to a full commit SHA; the `GITHUB_TOKEN` is read-only by default and cannot approve pull requests; workflows from all external contributors need approval | [actions-settings.json](actions-settings.json) |
 
 The first commit
 ([`5eccb10`](https://github.com/sarapersson/confidential-playtest/commit/5eccb104cdf1103d757c5595c8c3c086584beddc))
