@@ -1,0 +1,13 @@
+{
+  "allow_merge_commit": false,
+  "allow_rebase_merge": false,
+  "allow_squash_merge": true,
+  "default_branch": "main",
+  "delete_branch_on_merge": true,
+  "has_discussions": false,
+  "has_wiki": false,
+  "pull_request_creation_policy": "collaborators_only",
+  "squash_merge_commit_message": "PR_BODY",
+  "squash_merge_commit_title": "PR_TITLE",
+  "visibility": "public"
+}
