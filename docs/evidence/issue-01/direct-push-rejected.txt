@@ -1,0 +1,23 @@
+# git push origin HEAD:refs/heads/main (an empty, signed commit on a test branch; the local pre-push hook runs first)
+12:55AM INF 0 commits scanned.
+12:55AM INF scanned ~0 bytes (0) in 30.1ms
+12:55AM INF no leaks found
+12:55AM INF 0 commits scanned.
+12:55AM INF scanned ~0 bytes (0) in 3.51ms
+12:55AM INF no leaks found
+12:55AM INF scanned ~198 bytes (198 bytes) in 28.5ms
+12:55AM INF no leaks found
+12:55AM INF scanned ~198 bytes (198 bytes) in 1.54ms
+12:55AM INF no leaks found
+remote: error: GH013: Repository rule violations found for refs/heads/main.        
+remote: Review all repository rules at https://github.com/sarapersson/confidential-playtest/rules?ref=refs%2Fheads%2Fmain        
+remote: 
+remote: - Changes must be made through a pull request.        
+remote: 
+To github.com:sarapersson/confidential-playtest.git
+ ! [remote rejected] HEAD -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'github.com:sarapersson/confidential-playtest.git'
+
+# git ls-remote origin, right after the rejected push
+5eccb104cdf1103d757c5595c8c3c086584beddc	HEAD
+5eccb104cdf1103d757c5595c8c3c086584beddc	refs/heads/main

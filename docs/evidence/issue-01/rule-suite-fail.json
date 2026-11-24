@@ -1,0 +1,73 @@
+{
+  "id": 5321307771,
+  "actor_id": 30837182,
+  "actor_name": "sarapersson",
+  "before_sha": "5eccb104cdf1103d757c5595c8c3c086584beddc",
+  "after_sha": "81e39563bbeb80556d88662c8f8056f08903184c",
+  "ref": "refs/heads/main",
+  "repository_id": 1466689277,
+  "repository_name": "confidential-playtest",
+  "pushed_at": "2026-11-24T00:55:13+01:00",
+  "result": "fail",
+  "rule_evaluations": [
+    {
+      "rule_source": {
+        "type": "secret_scanning"
+      },
+      "enforcement": "active",
+      "result": "pass",
+      "rule_type": "secret_scanning"
+    },
+    {
+      "rule_source": {
+        "type": "ruleset",
+        "id": 27944496,
+        "name": "protect-main"
+      },
+      "enforcement": "active",
+      "result": "fail",
+      "rule_type": "pull_request",
+      "details": "Changes must be made through a pull request."
+    },
+    {
+      "rule_source": {
+        "type": "ruleset",
+        "id": 27944496,
+        "name": "protect-main"
+      },
+      "enforcement": "active",
+      "result": "pass",
+      "rule_type": "required_signatures"
+    },
+    {
+      "rule_source": {
+        "type": "ruleset",
+        "id": 27944496,
+        "name": "protect-main"
+      },
+      "enforcement": "active",
+      "result": "pass",
+      "rule_type": "required_linear_history"
+    },
+    {
+      "rule_source": {
+        "type": "ruleset",
+        "id": 27944496,
+        "name": "protect-main"
+      },
+      "enforcement": "active",
+      "result": "pass",
+      "rule_type": "non_fast_forward"
+    },
+    {
+      "rule_source": {
+        "type": "ruleset",
+        "id": 27944496,
+        "name": "protect-main"
+      },
+      "enforcement": "active",
+      "result": "pass",
+      "rule_type": "deletion"
+    }
+  ]
+}

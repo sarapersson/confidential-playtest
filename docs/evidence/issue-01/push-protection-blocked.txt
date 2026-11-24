@@ -1,0 +1,80 @@
+# 1. Push of the test branch: stopped by the local pre-push hook (gitleaks)
+Finding:     REDACTED
+Secret:      REDACTED
+RuleID:      github-fine-grained-pat
+Entropy:     5.500135
+File:        probe-secret.txt
+Line:        1
+Commit:      2f2c4cb96c1657fdff5c388edc07959e58b4e22f
+Author:      Sara Persson
+Email:       30837182+sarapersson@users.noreply.github.com
+Date:        2026-11-24T00:09:28Z
+Fingerprint: 2f2c4cb96c1657fdff5c388edc07959e58b4e22f:probe-secret.txt:github-fine-grained-pat:1
+
+1:09AM INF 1 commits scanned.
+1:09AM INF scanned ~94 bytes (94 bytes) in 29.3ms
+1:09AM WRN leaks found: 1
+1:09AM INF 1 commits scanned.
+1:09AM INF scanned ~94 bytes (94 bytes) in 3.93ms
+1:09AM INF no leaks found
+1:09AM INF scanned ~266 bytes (266 bytes) in 26.9ms
+1:09AM INF no leaks found
+1:09AM INF scanned ~266 bytes (266 bytes) in 1.61ms
+1:09AM INF no leaks found
+STOPP: gitleaks hittade något, eller kontrollen kunde inte göras. Pushen avbröts.
+error: failed to push some refs to 'github.com:sarapersson/confidential-playtest.git'
+
+# 2. The same push with --no-verify, which skips the hook: stopped by GitHub push protection
+remote: error: GH013: Repository rule violations found for refs/heads/probe/push-protection.        
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   —————————————————————————————————————————        
+remote:     Resolve the following violations before pushing again        
+remote: 
+remote:     - Push cannot contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a blocked push        
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push        
+remote:             
+remote:             
+remote:       —— GitHub Personal Access Token ——————————————————————        
+remote:        locations:        
+remote:          - commit: 2f2c4cb96c1657fdff5c388edc07959e58b4e22f        
+remote:            path: probe-secret.txt:1        
+remote:             
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.        
+remote:        https://github.com/sarapersson/confidential-playtest/security/secret-scanning/unblock-secret/<redacted>        
+remote:             
+remote: 
+remote: 
+To github.com:sarapersson/confidential-playtest.git
+ ! [remote rejected] probe/push-protection -> probe/push-protection (error: GH013: Repository rule violations found for refs/heads/probe/push-protection.
+
+- GITHUB PUSH PROTECTION
+  —————————————————————————————————————————
+    Resolve the following violations before pushing again
+
+    - Push cannot contain secrets
+
+    
+     (?) Learn how to resolve a blocked push
+     https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+    
+    
+      —— GitHub Personal Access Token ——————————————————————
+       locations:
+         - commit: 2f2c4cb96c1657fdff5c388edc07959e58b4e22f
+           path: probe-secret.txt:1
+    
+       (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+       https://github.com/sarapersson/confidential-playtest/security/secret-scanning/unblock-secret/<redacted>
+    
+
+
+)
+error: failed to push some refs to 'github.com:sarapersson/confidential-playtest.git'
+
+# 3. git ls-remote origin, run when this evidence was compiled: the test branch is not on GitHub
+5eccb104cdf1103d757c5595c8c3c086584beddc	HEAD
+5eccb104cdf1103d757c5595c8c3c086584beddc	refs/heads/main
